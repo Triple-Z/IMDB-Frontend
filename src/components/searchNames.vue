@@ -55,7 +55,7 @@
                 <!-- pagination -->
                 <v-container align-end>
                     <div class="text-xs-center" >
-                        <v-pagination v-model="pagination.page" :length="pagination.pages" @input="next" :total-visible="15" color="red" 
+                        <v-pagination v-model="pagination.page" :length="pagination.pages" @input="next" :total-visible="15" color="blue" 
                         ></v-pagination>
                     </div>
                 </v-container>
