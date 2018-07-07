@@ -45,30 +45,34 @@
                     </v-flex>
             </v-layout>
         </v-container>
-        <!-- flow button -->
-        <v-container align-end >
-            <v-layout >
-                <v-flex xs7 offset-xs5 >
-                    <v-speed-dial right absolute >
-                        <!-- first button -->
-                        <v-btn slot="activator" fab color="red" large>
-                        CURD
-                        </v-btn>
-                        <!-- second button -->
-                            <v-btn fab dark color="green" to='/curdtitles'>
-                                T
-                            </v-btn>
-                            <v-btn fab dark color="green" to='/curdnames'>
-                                N
-                            </v-btn>
-                            <v-btn fab dark color="indigo" to='/curdprincipals'>
-                                P
-                            </v-btn>
-                    </v-speed-dial>
+        
+        <v-container align-end>
+            <v-layout row >
+                <v-flex xs1 offset-xs12>
+                    <v-dialog v-model="dialog" width="500">
+                        <v-btn slot="activator" color="red lighten-2" dark fab> CURD </v-btn>
+                        <v-card>
+                            <v-card-title class="headline grey lighten-2" primary-title>
+                                Notice
+                            </v-card-title>
+
+                            <v-card-text>
+                                This function is not supported yet due to the security reason. Please wait for the next update.
+                            </v-card-text>
+
+                            <v-divider></v-divider>
+
+                            <v-card-actions>
+                                <v-spacer></v-spacer>
+                                <v-btn color="blue" flat @click="dialog = false">
+                                    I Know
+                                </v-btn>
+                            </v-card-actions>
+                        </v-card>
+                    </v-dialog>
                 </v-flex>
             </v-layout>
         </v-container>
-
         <router-view></router-view>
         </v-app>
     </div>
@@ -76,6 +80,11 @@
 
 <script>
 export default{
+  data () {
+    return {
+      dialog: false
+    }
+  }
 
 }
 </script>
