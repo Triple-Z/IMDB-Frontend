@@ -87,14 +87,14 @@
             </v-content>
             <!-- footer -->
             <v-footer height="auto" class="grey darken-3">
-                     <v-layout row wrap justify-center>                
-                        <v-btn color="white" flat to="/">
-                            Home
-                        </v-btn>
-                    <v-flex xs12 py-3 text-xs-center white--text >
-                        &copy;2018 — <strong>zzz</strong>
-                    </v-flex>
-                     </v-layout>
+              <v-layout row wrap justify-center>                
+                  <v-btn color="white" flat to="/">
+                        Home
+                  </v-btn>
+                  <v-flex xs12 py-3 text-xs-center white--text >
+                      &copy;2018 — <strong>zzz</strong>
+                  </v-flex>
+              </v-layout>
             </v-footer>  
         </v-app>
     </div>
