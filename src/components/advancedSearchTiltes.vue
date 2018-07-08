@@ -147,7 +147,7 @@
               <template slot="items" slot-scope="props">
                   <tr @click="expanded(props)" >
                       <td>{{ props.item.PrimaryTitle }}</td>
-                      <td class="text-xs-center" > <a :href=" 'https://www.imdb.com/title/' + props.item.TConst" > {{ props.item.TConst }}</a> </td>
+                      <td class="text-xs-center" > <a :href=" 'https://www.imdb.com/title/' + props.item.TConst" target="_blank"> {{ props.item.TConst }}</a> </td>
                       <td class="text-xs-center">{{ props.item.TitleType }}</td>
                       <td class="text-xs-center">{{ props.item.IsAdult }}</td>
                       <td class="text-xs-left">{{ props.item.OriginalTitle }}</td>
@@ -170,8 +170,9 @@
                               >
                                 <v-progress-linear slot="progress" color="blue" indeterminate></v-progress-linear>
                                   <template slot="items" slot-scope="principal_props">
-                                    <td>{{ principal_props.item.Ordering }}</td>
+                                    <td class="text-xs-center">{{ principal_props.item.Ordering }}</td>
                                     <td class="text-xs-center">{{ principal_props.item.PrimaryName }}</td>
+                                    <td class="text-xs-center"><a :href=" 'https://www.imdb.com/name/' + principal_props.item.NConst" target="_blank">{{ principal_props.item.NConst }}</a></td>
                                     <td class="text-xs-center">{{ principal_props.item.Category }}</td>
                                     <td class="text-xs-center">{{ principal_props.item.Job }}</td>
                                     <td class="text-xs-center">{{ principal_props.item.Characters }}</td>
@@ -253,6 +254,7 @@ export default {
           value: 'Ordering'
         },
         { text: 'Primary Name', value: 'PrimaryName', sortable: false, align: 'center' },
+        { text: 'NConst', value: 'NConst', sortable: false, align: 'center' },
         { text: 'Category', value: 'Category', sortable: false, align: 'center' },
         { text: 'Job', value: 'Job', sortable: false, align: 'center' },
         { text: 'Characters', value: 'Characters', sortable: false, align: 'center' }
@@ -451,6 +453,11 @@ export default {
             data[key].PrimaryName = data[key].PrimaryName.String
           } else {
             data[key].PrimaryName = ''
+          }
+          if (data[key].NConst.Valid) {
+            data[key].NConst = data[key].NConst.String
+          } else {
+            data[key].NConst = ''
           }
           if (data[key].Category.Valid) {
             data[key].Category = data[key].Category.String

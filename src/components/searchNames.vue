@@ -41,7 +41,7 @@
                                     <template slot="items" slot-scope="props">
                                         <tr @click="props.expanded = !props.expanded" >
                                             <td>{{ props.item.PrimaryName }}</td>
-                                            <td class="text-xs-left" > <a :href=" 'https://www.imdb.com/name/' + props.item.NConst" > {{ props.item.NConst }}</a> </td>
+                                            <td class="text-xs-left" > <a :href=" 'https://www.imdb.com/name/' + props.item.NConst" target="_blank"> {{ props.item.NConst }}</a> </td>
                                             <td class="text-xs-center">{{ props.item.BirthYear }}</td>
                                             <td class="text-xs-center">{{ props.item.DeathYear }}</td>
                                             <td class="text-xs-left">{{ props.item.PrimaryProfession }}</td>

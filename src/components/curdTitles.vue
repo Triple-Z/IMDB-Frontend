@@ -95,7 +95,7 @@
                 <template slot="items" slot-scope="props">
                   <tr @click="expanded(props)" >
                       <td>{{ props.item.PrimaryTitle }}</td>
-                      <td class="text-xs-right" > <a :href=" 'https://www.imdb.com/title/' + props.item.TConst" > {{ props.item.TConst }}</a> </td>
+                      <td class="text-xs-right" > <a :href=" 'https://www.imdb.com/title/' + props.item.TConst" target="_blank"> {{ props.item.TConst }}</a> </td>
                       <td class="text-xs-right">{{ props.item.TitleType }}</td>
                       <td class="text-xs-right">{{ props.item.IsAdult }}</td>
                       <td class="text-xs-center">{{ props.item.OriginalTitle }}</td>
