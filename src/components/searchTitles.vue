@@ -159,7 +159,7 @@ export default {
 
     getPrincipals () {
       this.details_loading = true 
-      this.axios.get('http://localhost:2333/api/v1/titles/' + this.expand_id + '/details')
+      this.axios.get('http://api.imdb.triplez.cn/v1/titles/' + this.expand_id + '/details')
         .then(response => {
           this.principals_data = response.data
           console.log(response)
@@ -174,7 +174,7 @@ export default {
     searchTitles (query) {
       this.loading = true
       if (query === '') {
-        this.axios.get('http://localhost:2333/api/v1/search/titles')
+        this.axios.get('http://api.imdb.triplez.cn/v1/search/titles')
           .then(response => {
             this.querys = response.data
             this.pagination.pages = response.data.total_page
@@ -187,7 +187,7 @@ export default {
             this.loading = false
           })
       } else {
-        this.axios.get('http://localhost:2333/api/v1/search/titles?q=' + query)
+        this.axios.get('http://api.imdb.triplez.cn/v1/search/titles?q=' + query)
           .then(response => {
             this.querys = response.data
             this.pagination.pages = response.data.total_page
@@ -207,7 +207,7 @@ export default {
       //  console.log("Page =")
       //  console.log(this.pagination.page)
       this.loading = true
-      this.axios.get('http://localhost:2333/api/v1/search/titles?q=' + this.query + '&page=' + this.pagination.page)
+      this.axios.get('http://api.imdb.triplez.cn/v1/search/titles?q=' + this.query + '&page=' + this.pagination.page)
         .then(response => {
           this.querys = response.data
           this.pagination.pages = response.data.total_page

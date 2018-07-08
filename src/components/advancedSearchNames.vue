@@ -185,7 +185,7 @@ export default {
       this.loading = true
       if (this.query === '' && this.nconst === '' && this.birthYearStart === '' &&
             this.birthYearEnd === '' && this.deathYearStart === '' && this.deathYearEnd === '') {
-        this.axios.get('http://localhost:2333/api/v1/advanced_search/names')
+        this.axios.get('http://api.imdb.triplez.cn/v1/advanced_search/names')
           .then(response => {
             this.querys = response.data
             this.pagination.pages = response.data.total_page
@@ -198,7 +198,7 @@ export default {
             this.loading = false
           })
       } else if (this.nconst !== '') {
-        this.axios.get('http://localhost:2333/api/v1/advanced_search/names', {
+        this.axios.get('http://api.imdb.triplez.cn/v1/advanced_search/names', {
           params: {
             nconst: this.nconst
           }
@@ -215,7 +215,7 @@ export default {
             this.loading = false
           })
       } else {
-        this.axios.get('http://localhost:2333/api/v1/advanced_search/names', {
+        this.axios.get('http://api.imdb.triplez.cn/v1/advanced_search/names', {
           params: {
             q: this.query,
             nconst: this.nconst,
@@ -245,7 +245,7 @@ export default {
       //  console.log("Page =")
       //  console.log(this.pagination.page)
       this.loading = true
-      this.axios.get('http://localhost:2333/api/v1/advanced_search/names', {
+      this.axios.get('http://api.imdb.triplez.cn/v1/advanced_search/names', {
         params: {
           q: this.query,
           nconst: this.nconst,

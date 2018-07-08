@@ -271,7 +271,7 @@ export default {
 
     getPrincipals () {
       this.details_loading = true 
-      this.axios.get('http://localhost:2333/api/v1/titles/' + this.expand_id + '/details')
+      this.axios.get('http://api.imdb.triplez.cn/v1/titles/' + this.expand_id + '/details')
         .then(response => {
           this.principals_data = response.data
           console.log(response)
@@ -288,7 +288,7 @@ export default {
       if (this.query === '' && this.tconst === '' && this.isAdult === '' &&
             this.startYearStart === '' && this.startYearEnd === '' && this.endYearStart === '' && 
             this.endYearEnd === '' && this.runtimeMinStart === '' && this.runtimeMinEnd === '') {
-        this.axios.get('http://localhost:2333/api/v1/advanced_search/titles')
+        this.axios.get('http://api.imdb.triplez.cn/v1/advanced_search/titles')
           .then(response => {
             this.querys = response.data
             this.pagination.pages = response.data.total_page
@@ -301,7 +301,7 @@ export default {
             this.loading = false
           })
       } else if (this.tconst !== '') {
-        this.axios.get('http://localhost:2333/api/v1/advanced_search/titles', {
+        this.axios.get('http://api.imdb.triplez.cn/v1/advanced_search/titles', {
           params: {
             tconst: this.tconst
           }
@@ -318,7 +318,7 @@ export default {
             this.loading = false
           })
       } else {
-        this.axios.get('http://localhost:2333/api/v1/advanced_search/titles', {
+        this.axios.get('http://api.imdb.triplez.cn/v1/advanced_search/titles', {
           params: {
             q: this.query,
             tconst: this.tconst,
@@ -351,7 +351,7 @@ export default {
       //  console.log("Page =")
       //  console.log(this.pagination.page)
       this.loading = true
-      this.axios.get('http://localhost:2333/api/v1/advanced_search/titles', {
+      this.axios.get('http://api.imdb.triplez.cn/v1/advanced_search/titles', {
         params: {
           q: this.query,
           tconst: this.tconst,

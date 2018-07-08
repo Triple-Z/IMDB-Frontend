@@ -108,7 +108,7 @@ export default {
     searchNames (query) {
       this.loading = true
       if (query === '') {
-        this.axios.get('http://localhost:2333/api/v1/search/names')
+        this.axios.get('http://api.imdb.triplez.cn/v1/search/names')
           .then(response => {
             this.querys = response.data
             this.pagination.pages = response.data.total_page
@@ -120,7 +120,7 @@ export default {
             console.log(err)
           })
       } else {
-        this.axios.get('http://localhost:2333/api/v1/search/names?q=' + query)
+        this.axios.get('http://api.imdb.triplez.cn/v1/search/names?q=' + query)
           .then(response => {
             this.querys = response.data
             this.pagination.pages = response.data.total_page
@@ -138,7 +138,7 @@ export default {
     //  console.log("Page =")
     //  console.log(this.pagination.page)
       this.loading = true
-      this.axios.get('http://localhost:2333/api/v1/search/names?q=' + this.query + '&page=' + this.pagination.page)
+      this.axios.get('http://api.imdb.triplez.cn/v1/search/names?q=' + this.query + '&page=' + this.pagination.page)
         .then(response => {
           this.querys = response.data
           this.pagination.pages = response.data.total_page
